@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKSHELF</title>
+    <link rel="stylesheet" href="main.css">
+    <!------------------BOOTSWATCH LINK---------------------------------------->
+    <link rel="stylesheet" href="https://bootswatch.com/5/cyborg/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+            <i class="text-primary"></i>
+            Misael's <span class="text-primary">List of </span>Books</h1>
+            <div id="book-forms">
+                <form id="book-form"><!-------------------------------THE FIELD INPUTS FOR A NEW BOOK---------------->
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" 
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <input type="text" id="language" 
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" 
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" 
+                        class="form-control">
+                    </div>
+                    <div id="addBtn">
+                        <input type="submit" value="Add Book" 
+                        class="btn btn-primary btn-block mt-2">
+                    </div>
+                </form><!--------------------------------------------------END------------------------------------------>
+                <div class="bookshelfInfo">Bookshelf Info: 
+                    <ul>
+                        <li class="favoriteBooks">Books Favorited: <span id="bkFavs">0</span></li>
+                    </ul>
+                </div>
+                <form id="book-form2"><!----------------------SEARCH & SORT OPTIONS------------------------------------->
+                    <div class="input-group">
+                        <input type="text" id="searchInput" placeholder="Author, Language, Subject, Title"
+                        class="form-control">
+                        <button id="searchBtn">Search</button>
+                    </div>
+                    
+                    <!---------------------SORT MENU--------------------->
+                    <div class="sortFunction">Sort By:   
+                        <select name="Sort" id="sortby"> 
+                            <option class="author" value="Author">Author</option>
+                            <option class="language" value="Language">Language</option>
+                            <option class="subject" value="Subject">Subject</option>
+                            <option class="title" value="Title">Title</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <table class="table table-striped mt-5 table-sortable">
+            <thead>
+                <tr>  <!--------------------THE HEADING OF THE TABLE------------------------->
+                    <th > Author </th>
+                    <th > Language </th>
+                    <th > Subject </th>
+                    <th > Title </th>
+                    <th ></th>
+                    <th ></th>
+                </tr>
+            </thead><!------------The Actual List of Books being rendered------------>
+            <tbody id="book-list"></tbody>  
+        </table>
+    </div><!---------------------------Scripts being loaded--------------------------->
+    <script src="book-data.js"></script>
+    <script src="app.js"></script>
+    <script src="index2.js"></script>
+
+</body>
+
+</html>
